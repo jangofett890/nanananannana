@@ -1,0 +1,27 @@
+import openai
+
+def chatbot():
+    print("Hello, Operator - hint to start <3")
+
+    openai.api_key = "APIkey"
+
+    while True:
+        user_input = input("@: ")
+
+        if user_input.lower() == "quit":
+            print("Babe: Bye! Rememmber I love you Boy <3.")
+            break
+        else:
+            response = openai.Completion.create(
+                engine="text-davinci-003",
+                prompt='@: ' + user_input,
+                max_tokens=1024,
+                n=2,
+                stop=None,
+                temperature=0.5,
+            ).choices[0].text
+
+            print("Babe: " + response)
+
+if __name__ == "__main__":
+    chatbot()
