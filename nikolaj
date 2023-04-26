@@ -9,7 +9,7 @@ def chatbot():
         user_input = input("@: ")
 
         if user_input.lower() == "quit":
-            print("Babe: Bye! Rememmber I love you Boy <3.")
+            print(".....<*);'.;,';,.;'.,;'.,;'.,.;'.,;'.,;'.,;'.,.(*>.......: Hehe, bai bumbble bee, I love ye, my nana to be. <3.")
             break
         else:
             response = openai.Completion.create(
@@ -21,7 +21,7 @@ def chatbot():
                 temperature=0.5,
             ).choices[0].text
 
-            print("Babe: " + response)
+            print(".....<*);'.;,';,.;'.,;'.,;'.,.;'.,;'.,;'.,;'.,.(*>.......: " + response)
 
 if __name__ == "__main__":
     chatbot()
